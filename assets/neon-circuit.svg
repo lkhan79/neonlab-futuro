@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <title>Nucleo elettronico</title>
+  <desc>Circuito digitale simmetrico con microchip centrale viola e percorsi ciano.</desc>
+  <defs>
+    <radialGradient id="board" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#18295f"/>
+      <stop offset="1" stop-color="#050a1a"/>
+    </radialGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4defff"/>
+      <stop offset="1" stop-color="#ae6cff"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5e3fbd"/>
+      <stop offset="1" stop-color="#121e4a"/>
+    </linearGradient>
+    <filter id="shine" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#6ab7ff" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#board)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <g fill="none" stroke="url(#trace)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.75">
+    <path d="M0 145H225L345 265H475M0 325H275L360 325H475M0 520H190L340 405H475"/>
+    <path d="M1200 145H975L855 265H725M1200 325H925L840 325H725M1200 520H1010L860 405H725"/>
+    <path d="M600 0V150M600 525V675M480 0V108L530 158M720 0V108L670 158"/>
+  </g>
+  <g fill="#6befff" filter="url(#shine)">
+    <circle cx="225" cy="145" r="7"/><circle cx="275" cy="325" r="7"/>
+    <circle cx="190" cy="520" r="7"/><circle cx="975" cy="145" r="7"/>
+    <circle cx="925" cy="325" r="7"/><circle cx="1010" cy="520" r="7"/>
+  </g>
+  <rect x="466" y="203" width="268" height="268" rx="34" fill="url(#chip)" stroke="#9dfbff" stroke-width="6" filter="url(#shine)"/>
+  <rect x="504" y="242" width="192" height="191" rx="20" fill="#0d1b44" stroke="#aa72ff" stroke-width="4"/>
+  <path d="M600 263 671 304V382L600 423 529 382V304Z" fill="#744bdc" fill-opacity="0.48" stroke="#b8faff" stroke-width="4"/>
+  <circle cx="600" cy="343" r="30" fill="#88eeff" fill-opacity="0.25" stroke="#b6ffff" stroke-width="4"/>
+  <circle cx="600" cy="343" r="7" fill="#fff"/>
+</svg>

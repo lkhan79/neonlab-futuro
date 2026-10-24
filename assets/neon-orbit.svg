@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <title>Orbita digitale futuristica</title>
+  <desc>Composizione astratta con anelli ciano e viola, particelle luminose e griglia prospettica.</desc>
+  <defs>
+    <linearGradient id="fondale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1430"/>
+      <stop offset="0.52" stop-color="#120f33"/>
+      <stop offset="1" stop-color="#040813"/>
+    </linearGradient>
+    <radialGradient id="bagliore" cx="50%" cy="48%" r="48%">
+      <stop offset="0" stop-color="#3ddcf3" stop-opacity="0.25"/>
+      <stop offset="0.55" stop-color="#7f4cff" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="#070b1b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="anello" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#43eaff"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ff59c8"/>
+    </linearGradient>
+    <linearGradient id="nucleo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8dfeff"/>
+      <stop offset="0.5" stop-color="#5438bd"/>
+      <stop offset="1" stop-color="#111a4a"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="griglia" width="55" height="55" patternUnits="userSpaceOnUse">
+      <path d="M55 0H0V55" fill="none" stroke="#70b2ed" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#fondale)"/>
+  <rect width="1200" height="675" fill="url(#griglia)"/>
+  <rect width="1200" height="675" fill="url(#bagliore)"/>
+
+  <g transform="translate(615 338)" fill="none">
+    <circle r="256" stroke="#60ddff" stroke-opacity="0.13" stroke-width="1"/>
+    <circle r="206" stroke="#ad7cff" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 14"/>
+    <circle r="170" stroke="url(#anello)" stroke-opacity="0.76" stroke-width="3"/>
+    <ellipse rx="316" ry="123" transform="rotate(-22)" stroke="url(#anello)" stroke-opacity="0.7" stroke-width="5" filter="url(#glow)"/>
+    <ellipse rx="315" ry="120" transform="rotate(34)" stroke="#53e8ff" stroke-opacity="0.35" stroke-width="2"/>
+    <ellipse rx="231" ry="80" transform="rotate(70)" stroke="#d482ff" stroke-opacity="0.4" stroke-width="2"/>
+    <circle r="123" fill="#101c4d" fill-opacity="0.65" stroke="#65ecff" stroke-opacity="0.5" stroke-width="2"/>
+    <path d="M0 -102 87 -51 87 51 0 102 -87 51 -87 -51Z" fill="url(#nucleo)" fill-opacity="0.45" stroke="#85fbff" stroke-width="3" filter="url(#glow)"/>
+    <path d="M0 -102V102M-87 -51 87 51M87 -51 -87 51" stroke="#9dfdff" stroke-opacity="0.5" stroke-width="2"/>
+    <circle r="37" fill="#69dfff" fill-opacity="0.2" stroke="#a5ffff" stroke-width="3" filter="url(#glow)"/>
+    <circle r="7" fill="#e9ffff"/>
+  </g>
+
+  <g fill="#90f7ff">
+    <circle cx="212" cy="134" r="3" opacity="0.65"/>
+    <circle cx="365" cy="492" r="2" opacity="0.9"/>
+    <circle cx="1008" cy="164" r="4" opacity="0.7"/>
+    <circle cx="947" cy="530" r="2" opacity="0.8"/>
+    <circle cx="1120" cy="388" r="2" opacity="0.5"/>
+    <circle cx="151" cy="371" r="2" opacity="0.8"/>
+    <circle cx="788" cy="95" r="2" opacity="0.8"/>
+  </g>
+  <g fill="#c48aff">
+    <circle cx="290" cy="263" r="4" opacity="0.7"/>
+    <circle cx="872" cy="432" r="4" opacity="0.7"/>
+    <circle cx="756" cy="565" r="2" opacity="0.7"/>
+  </g>
+  <path d="M70 565h180m-180 16h100m795-480h150m-100 16h100" stroke="#84d8ff" stroke-opacity="0.23" stroke-width="2"/>
+</svg>

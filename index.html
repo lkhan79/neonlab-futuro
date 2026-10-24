@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LUCAZZO è un laboratorio digitale di design neon, interfacce futuristiche e tecnologie interattive. Scopri i progetti e contattaci.">
+  <meta name="theme-color" content="#02040b">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="LUCAZZO — Design futuristico neon">
+  <meta property="og:description" content="Design neon, esperienze digitali e progetti tecnologici interattivi.">
+  <title>MIOSITOCAZZO - Il Futuro</title>
+
+  <link rel="icon" href="assets/favicon-neon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a href="#contenuto" class="salta-contenuto">Vai direttamente al contenuto</a>
+  <nav class="barra-menu" aria-label="Navigazione principale">
+    <a href="#home" class="logo">⚡ LUCAZZO</a>
+    <button id="apri-menu" type="button" aria-expanded="false" aria-controls="link-menu">☰ Menu</button>
+    <div id="link-menu" class="link-menu">
+      <a href="#home">Home</a>
+      <a href="#vetrina">Vetrina</a>
+      <a href="#energia">Energia</a>
+      <a href="#progetti">Tecnologie</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#contatti">Contatti</a>
+      <button id="cambia-tema" type="button" aria-pressed="false">Attiva tema rosa</button>
+    </div>
+  </nav>
+
+  <main id="contenuto" tabindex="-1">
+    <section id="home" class="hero" aria-labelledby="titolo-principale">
+      <h1 id="titolo-principale">Il futuro dipende <span>da te.</span></h1>
+      <p>Design, tecnologia e innovazione in una nuova esperienza digitale.</p>
+      <a href="#progetti" class="pulsante">
+        ESPLORA IL FUTURO
+        <svg class="icona-freccia" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Lezione 8: immagine SVG responsive e pannello sovrapposto -->
+    <section id="vetrina" class="visual-showcase rivelazione" aria-labelledby="vetrina-titolo">
+      <h2 id="vetrina-titolo">Una finestra sul futuro</h2>
+      <p>Un'illustrazione vettoriale: nitida a ogni dimensione e disponibile anche offline.</p>
+      <div class="visual-frame">
+        <img src="assets/neon-orbit.svg" width="1200" height="675" loading="lazy" decoding="async"
+             alt="Orbita digitale astratta con anelli ciano e viola intorno a un nucleo luminoso">
+        <div class="visual-overlay" aria-hidden="true">
+          <span class="visual-etichetta">HOLOGRAPHIC INTERFACE</span>
+          <strong>NEXUS / 2088</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="energia" class="pannello-js rivelazione" aria-labelledby="titolo-energia">
+      <h2 id="titolo-energia">⚡ Energy Control</h2>
+      <p>Livello energia</p>
+      <div id="numero-energia" aria-live="polite">0</div>
+      <p id="messaggio-energia" role="status">Sistema in standby</p>
+      <div id="barra-energia" class="barra-energia" role="progressbar" aria-label="Livello energia" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <span id="riempimento-energia"></span>
+      </div>
+      <div class="comandi-energia">
+        <button id="aumenta-energia" type="button">⚡ Aumenta energia</button>
+        <button id="azzera-energia" type="button">Azzera</button>
+      </div>
+    </section>
+
+    <section id="progetti" class="sezione-card rivelazione" aria-labelledby="titolo-tecnologie">
+      <h2 id="titolo-tecnologie">Le nostre tecnologie</h2>
+      <div class="contenitore-card">
+        <button class="card selezionata" type="button" aria-pressed="true"
+                data-titolo="Velocità"
+                data-descrizione="Realizziamo esperienze digitali rapide e fluide, con attenzione alle prestazioni.">
+          <span class="icona" aria-hidden="true">⚡</span>
+          <span class="card-titolo">Velocità</span>
+          <span class="card-descrizione">Esperienze digitali rapide e fluide.</span>
+        </button>
+
+        <button class="card" type="button" aria-pressed="false"
+                data-titolo="Design"
+                data-descrizione="Progettiamo interfacce moderne, luminose e intuitive, adatte anche allo smartphone.">
+          <span class="icona" aria-hidden="true">◈</span>
+          <span class="card-titolo">Design</span>
+          <span class="card-descrizione">Interfacce moderne e futuristiche.</span>
+        </button>
+
+        <button class="card" type="button" aria-pressed="false"
+                data-titolo="Innovazione"
+                data-descrizione="Sperimentiamo nuove tecnologie per realizzare esperienze interattive e originali.">
+          <span class="icona" aria-hidden="true">✦</span>
+          <span class="card-titolo">Innovazione</span>
+          <span class="card-descrizione">Tecnologie pensate per il futuro.</span>
+        </button>
+      </div>
+
+      <div class="dettaglio" aria-live="polite">
+        <p class="etichetta">TECNOLOGIA SELEZIONATA</p>
+        <h3 id="dettaglio-titolo">Velocità</h3>
+        <p id="dettaglio-descrizione">Realizziamo esperienze digitali rapide e fluide, con attenzione alle prestazioni.</p>
+      </div>
+    </section>
+
+    <!-- Lezione 9: galleria cliccabile con anteprima -->
+    <section id="galleria" class="galleria rivelazione" aria-labelledby="titolo-galleria">
+      <h2 id="titolo-galleria">Galleria del futuro</h2>
+      <p>Seleziona un progetto per vedere l'immagine ingrandita e la sua descrizione.</p>
+
+      <div class="galleria-griglia">
+        <button class="galleria-item" type="button"
+                data-src="assets/neon-orbit.svg"
+                data-titolo="Orbita digitale"
+                data-alt="Anelli futuristici ciano e viola intorno a un nucleo luminoso"
+                data-descrizione="Un'interfaccia astratta di anelli e particelle, creata con grafica vettoriale SVG.">
+          <img src="assets/neon-orbit.svg" alt="" width="1200" height="675" loading="lazy" decoding="async">
+          <span class="galleria-titolo">Orbita digitale</span>
+          <span class="galleria-sottotitolo">Interfacce olografiche</span>
+        </button>
+
+        <button class="galleria-item" type="button"
+                data-src="assets/neon-city.svg"
+                data-titolo="Metropoli cyberpunk"
+                data-alt="Città notturna futuristica illuminata da luci rosa e azzurre"
+                data-descrizione="Uno skyline geometrico con insegne luminose e una griglia in prospettiva.">
+          <img src="assets/neon-city.svg" alt="" width="1200" height="675" loading="lazy" decoding="async">
+          <span class="galleria-titolo">Metropoli cyberpunk</span>
+          <span class="galleria-sottotitolo">Ambienti digitali</span>
+        </button>
+
+        <button class="galleria-item" type="button"
+                data-src="assets/neon-circuit.svg"
+                data-titolo="Nucleo elettronico"
+                data-alt="Circuito digitale simmetrico con chip centrale viola"
+                data-descrizione="Un circuito vettoriale con percorsi luminosi e un microchip al centro.">
+          <img src="assets/neon-circuit.svg" alt="" width="1200" height="675" loading="lazy" decoding="async">
+          <span class="galleria-titolo">Nucleo elettronico</span>
+          <span class="galleria-sottotitolo">Tecnologia e innovazione</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Lezione 14: il sito pubblico statico prepara una bozza email -->
+    <section id="contatti" class="contatti rivelazione" aria-labelledby="titolo-contatti">
+      <div class="contatti-intro">
+        <span class="soprattitolo">// START A CONVERSATION</span>
+        <h2 id="titolo-contatti">Costruiamo qualcosa di <span>straordinario.</span></h2>
+        <p>Hai un'idea per il futuro? Compila il modulo per preparare una bozza email con nome, indirizzo e messaggio.</p>
+        <div class="contatti-tag"><span aria-hidden="true">●</span> CONTATTO VIA EMAIL</div>
+        <p class="nota-demo">Il sito pubblico <strong>non raccoglie e non salva messaggi</strong>: la bozza si apre nel programma di posta e sarai tu a premere Invia.</p>
+      </div>
+
+      <form id="form-contatti" class="form-contatti" novalidate>
+        <div class="form-intestazione">
+          <span class="soprattitolo">TERMINAL / CONTACT</span>
+          <span aria-hidden="true">✦</span>
+        </div>
+
+        <div class="gruppo-campo">
+          <label for="nome">Il tuo nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Es. Luca"
+                 minlength="2" maxlength="60" required aria-describedby="errore-nome">
+          <p id="errore-nome" class="errore-campo" aria-live="polite"></p>
+        </div>
+
+        <div class="gruppo-campo">
+          <label for="email">La tua email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@esempio.it"
+                 maxlength="254" required aria-describedby="errore-email">
+          <p id="errore-email" class="errore-campo" aria-live="polite"></p>
+        </div>
+
+        <div class="gruppo-campo">
+          <label for="messaggio">Il tuo messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="5" minlength="15" maxlength="500"
+                    placeholder="Raccontami la tua idea..." required
+                    aria-describedby="errore-messaggio contatore-caratteri"></textarea>
+          <div class="campo-informazioni">
+            <p id="errore-messaggio" class="errore-campo" aria-live="polite"></p>
+            <span id="contatore-caratteri">0 / 500</span>
+          </div>
+        </div>
+
+        <div class="azioni-form">
+          <button type="submit" class="invia-contatto">PREPARA EMAIL <span aria-hidden="true">→</span></button>
+          <button type="reset" class="reset-contatto">Cancella</button>
+        </div>
+        <p id="stato-form" class="stato-form" role="status" aria-live="polite"></p>
+        <a id="apri-email-manuale" class="link-email-manuale" hidden>Apri la bozza nel programma di posta ↗</a>
+        <p class="nota-server">Funziona solo se sul dispositivo è configurata un'app di posta. Nessuna email viene inviata automaticamente.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer-sito">⚡ LUCAZZO <span>— Il nostro primo sito pronto per la pubblicazione · Lezione 14</span></footer>
+
+  <dialog id="anteprima-dialog" class="anteprima-dialog" aria-labelledby="anteprima-titolo">
+    <div class="anteprima-barra">
+      <h2 id="anteprima-titolo">Anteprima</h2>
+      <button id="chiudi-anteprima" type="button" aria-label="Chiudi anteprima">✕</button>
+    </div>
+    <img id="anteprima-immagine" src="assets/neon-orbit.svg" alt="" width="1200" height="675">
+    <p id="anteprima-descrizione"></p>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
