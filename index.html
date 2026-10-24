@@ -9,8 +9,10 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:title" content="LUCAZZO — Design futuristico neon">
   <meta property="og:description" content="Design neon, esperienze digitali e progetti tecnologici interattivi.">
+  <meta property="og:url" content="https://lkhan79.github.io/neonlab-futuro/">
   <title>MIOSITOCAZZO - Il Futuro</title>
 
+  <link rel="canonical" href="https://lkhan79.github.io/neonlab-futuro/">
   <link rel="icon" href="assets/favicon-neon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,6 +28,7 @@
       <a href="#energia">Energia</a>
       <a href="#progetti">Tecnologie</a>
       <a href="#galleria">Galleria</a>
+      <a href="#percorso">Percorso</a>
       <a href="#contatti">Contatti</a>
       <button id="cambia-tema" type="button" aria-pressed="false">Attiva tema rosa</button>
     </div>
@@ -146,6 +149,50 @@
       </div>
     </section>
 
+    <!-- Lezione 15: il percorso del progetto, pronto da mostrare nel portfolio -->
+    <section id="percorso" class="percorso rivelazione" aria-labelledby="titolo-percorso">
+      <span class="soprattitolo">// PROJECT JOURNEY</span>
+      <h2 id="titolo-percorso">Dal primo tag HTML <span>al futuro online.</span></h2>
+      <p>Quindici lezioni, un progetto concreto: queste sono le competenze che abbiamo messo in pratica.</p>
+
+      <ol class="timeline-progetto">
+        <li>
+          <span class="numero-step">01</span>
+          <div>
+            <h3>Struttura HTML</h3>
+            <p>Sezioni, navigazione, testi e contenuti accessibili.</p>
+          </div>
+        </li>
+        <li>
+          <span class="numero-step">02</span>
+          <div>
+            <h3>Design CSS neon</h3>
+            <p>Gradienti, vetro digitale, animazioni e layout responsive.</p>
+          </div>
+        </li>
+        <li>
+          <span class="numero-step">03</span>
+          <div>
+            <h3>Interazioni JavaScript</h3>
+            <p>Temi dinamici, energia, galleria e moduli controllati.</p>
+          </div>
+        </li>
+        <li>
+          <span class="numero-step">04</span>
+          <div>
+            <h3>Backend e pubblicazione</h3>
+            <p>Server Node.js studiato in locale e sito statico preparato per GitHub Pages.</p>
+          </div>
+        </li>
+      </ol>
+
+      <a class="link-codice" href="https://github.com/lkhan79/neonlab-futuro"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Visualizza il codice su GitHub, si apre in una nuova scheda">
+        <span aria-hidden="true">⌘</span> ESPLORA IL CODICE SU GITHUB ↗
+      </a>
+    </section>
+
     <!-- Lezione 14: il sito pubblico statico prepara una bozza email -->
     <section id="contatti" class="contatti rivelazione" aria-labelledby="titolo-contatti">
       <div class="contatti-intro">
@@ -198,7 +245,9 @@
     </section>
   </main>
 
-  <footer class="footer-sito">⚡ LUCAZZO <span>— Il nostro primo sito pronto per la pubblicazione · Lezione 14</span></footer>
+  <footer class="footer-sito">⚡ LUCAZZO <span>© <span id="anno-corrente">2026</span> · NeonLab — Progetto finale</span></footer>
+
+  <button id="torna-su" class="torna-su" type="button" aria-label="Torna all'inizio della pagina" hidden>↑</button>
 
   <dialog id="anteprima-dialog" class="anteprima-dialog" aria-labelledby="anteprima-titolo">
     <div class="anteprima-barra">

@@ -148,7 +148,7 @@ finestraAnteprima.addEventListener("click", function (evento) {
 // Lezione 14: scrivi qui un TUO indirizzo email dedicato ai contatti.
 // ATTENZIONE: sarà visibile a chiunque nel codice del sito pubblico.
 // Configuralo prima di pubblicare su GitHub Pages.
-const EMAIL_DESTINATARIO = "dlarocca79@gmail.com";
+const EMAIL_DESTINATARIO = "";
 
 // Lezioni 10-11 e 14: controllo del modulo e bozza email senza backend.
 const moduloContatti = document.querySelector("#form-contatti");
@@ -264,3 +264,28 @@ moduloContatti.addEventListener("reset", function () {
   statoForm.classList.remove("errore-generale");
   nascondiLinkEmail();
 });
+
+// Lezione 15: l'anno nel footer si aggiorna automaticamente.
+const annoCorrente = document.querySelector("#anno-corrente");
+annoCorrente.textContent = String(new Date().getFullYear());
+
+// Lezione 15: pulsante "Torna su" che compare dopo lo scorrimento.
+const pulsanteTornaSu = document.querySelector("#torna-su");
+
+function aggiornaPulsanteTornaSu() {
+  pulsanteTornaSu.hidden = window.scrollY < 450;
+}
+
+window.addEventListener("scroll", aggiornaPulsanteTornaSu, { passive: true });
+
+pulsanteTornaSu.addEventListener("click", function () {
+  const movimentoRidotto = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  window.scrollTo({
+    top: 0,
+    behavior: movimentoRidotto ? "auto" : "smooth",
+  });
+});
+
+aggiornaPulsanteTornaSu();

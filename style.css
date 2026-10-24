@@ -826,3 +826,126 @@ button:focus-visible, a:focus-visible {
 
 .link-email-manuale[hidden] { display: none; }
 .link-email-manuale:hover { color: #fff; }
+
+/* Lezione 15: sezione portfolio — raccontiamo come è nato il sito */
+#percorso { scroll-margin-top: 110px; }
+
+.percorso {
+  width: 100%;
+  max-width: 1100px;
+  margin: 10px auto 100px;
+  text-align: center;
+}
+
+.percorso h2 {
+  max-width: 760px;
+  margin: 18px auto;
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.15;
+}
+
+.percorso h2 span {
+  color: var(--neon);
+  text-shadow: 0 0 25px #4defff66;
+}
+
+.percorso > p { max-width: 640px; margin-bottom: 35px; }
+
+.timeline-progetto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.timeline-progetto li {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 26px;
+  border: 1px solid #4defff40;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #4defff12, #a855f713);
+  box-shadow: 0 10px 35px #0004;
+  text-align: left;
+}
+
+.numero-step {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #4defff88;
+  border-radius: 14px;
+  color: var(--neon);
+  font-size: 21px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #4defff88;
+}
+
+.timeline-progetto h3 { margin: 0 0 9px; color: #fff; font-size: 20px; }
+
+.timeline-progetto p {
+  margin: 0;
+  color: var(--testo-secondario);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.link-codice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 14px 20px;
+  border: 1px solid #a855f799;
+  border-radius: 12px;
+  background: #a855f71b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background .2s, box-shadow .2s;
+}
+
+.link-codice:hover {
+  background: #a855f738;
+  box-shadow: 0 0 20px #a855f755;
+}
+
+/* Lezione 15: pulsante per tornare in cima, visibile dopo lo scroll */
+.torna-su {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid #9cf6ff;
+  border-radius: 50%;
+  background: #142441;
+  color: #9cf6ff;
+  font-size: 27px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 25px #4defff55;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.torna-su:hover { transform: translateY(-4px); box-shadow: 0 0 35px #4defff88; }
+.torna-su[hidden] { display: none; }
+
+@media (max-width: 768px) {
+  .timeline-progetto { grid-template-columns: 1fr; }
+  .timeline-progetto li { padding: 22px; }
+  .torna-su { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .torna-su:hover { transform: none; }
+}

@@ -1,124 +1,114 @@
-# NEO222LAB — Lezione 14 di 15
+# ⚡ NeonLab — Lezione 15 di 15: il progetto finale
 
-## Il nostro sito neon va online!
+Complimenti! Hai attraversato 15 lezioni pratiche, partendo da HTML e CSS fino a JavaScript, un backend locale con Node.js e la pubblicazione di una versione statica con GitHub Pages.
 
-Questa cartella contiene **solo il sito pubblico statico**: `index.html`, `style.css`, `script.js` e le immagini SVG nella cartella `assets`.
+Questa è la **versione finale da portfolio**, con tutti i file aggiornati.
 
-**Non contiene `server.js`, la cartella `dati` o i messaggi ricevuti.** Il vecchio backend delle lezioni 12 e 13 rimane sul tuo computer. GitHub Pages pubblica file statici ma non esegue il nostro backend Node.js.
+## 1. Prima cosa: proteggi le tue personalizzazioni
 
-## 1. Prima di pubblicare: controlla il modulo Contatti
-
-Il sito online usa una bozza email, come nella lezione 11. Non invia un messaggio direttamente dal server e non salva i dati di chi scrive.
-
-Apri `script.js` e cerca:
+Il progetto viene fornito con questa riga in `script.js`:
 
 ```js
 const EMAIL_DESTINATARIO = "";
 ```
 
-Se vuoi ricevere contatti, sostituisci le virgolette vuote con un indirizzo email **dedicato e di tua proprietà**:
+**IMPORTANTE:** se nella lezione 14 avevi inserito un tuo indirizzo email, devi **reinserirlo** prima di caricare il nuovo `script.js` su GitHub. Il nuovo file non conosce le modifiche che hai effettuato sul tuo computer.
+
+Usa preferibilmente un indirizzo dedicato: sarà visibile nel JavaScript pubblico e potrebbe attirare spam. Il modulo apre una bozza di posta, non invia messaggi automaticamente e non salva dati su un server.
+
+Se nella versione precedente hai personalizzato il nome del sito, i colori o i testi, confronta i file e riporta le modifiche desiderate. Il nostro pacchetto non cancella il tuo progetto precedente.
+
+## 2. Cosa abbiamo aggiunto
+
+### Sezione "Percorso"
+
+In `index.html` cerca:
+
+```html
+<section id="percorso" class="percorso rivelazione" aria-labelledby="titolo-percorso">
+```
+
+La sezione presenta quattro tappe: HTML, CSS neon, JavaScript e backend/pubblicazione. Usa un elenco ordinato `<ol>` e uno stile a schede per raccontare il progetto nel portfolio.
+
+### Pulsante "Torna su"
+
+Nel nuovo `script.js` trovi:
 
 ```js
-const EMAIL_DESTINATARIO = "contatti-esempio@example.com";
+function aggiornaPulsanteTornaSu() {
+  pulsanteTornaSu.hidden = window.scrollY < 450;
+}
 ```
 
-`contatti-esempio@example.com` è un esempio: **non lasciarlo come destinatario**.
+- `window.scrollY` indica quanto sei sceso nella pagina.
+- `hidden` mostra o nasconde il pulsante.
+- `window.scrollTo(...)` riporta il visitatore all'inizio.
+- Se una persona preferisce movimento ridotto, il ritorno avviene senza animazione.
 
-ATTENZIONE: chiunque potrà vedere l'indirizzo nel codice JavaScript pubblico. Un indirizzo personale può ricevere spam. Se preferisci non renderne pubblico uno, non presentare il modulo come attivo: potrai configurare in futuro un servizio di gestione dei contatti.
+### Anno automatico nel footer
 
-Il visitatore dovrà avere un programma di posta configurato e premere personalmente **Invia**. Non c'è alcuna garanzia di consegna automatica.
+```js
+annoCorrente.textContent = String(new Date().getFullYear());
+```
 
-Controlla anche il titolo e il logo del sito: nella versione attuale trovi ancora i nomi personalizzati delle lezioni precedenti. Decidi tu come vuoi presentarti pubblicamente.
+Il sito legge l'anno dal dispositivo del visitatore; non dovrai modificarlo manualmente ogni gennaio.
 
-## 2. Prova prima sul computer
+### Presentazione del repository
 
-1. Salva eventuali modifiche a `script.js`.
-2. Apri `index.html` nel browser: per questa versione statica **non serve Node.js**.
-3. Prova menu, tema rosa, energia, schede, galleria e pulsante di esplorazione.
-4. Se hai configurato un indirizzo, prova la bozza email e **non inviare test a indirizzi altrui**.
+Abbiamo aggiunto `README.md`: GitHub lo mostra nella pagina principale del repository per spiegare il progetto, le tecnologie usate e come avviarlo.
 
-## 3. Crea un repository GitHub
+### Collegamenti SEO
 
-1. Vai su **https://github.com** e accedi al tuo account (creane uno se non lo hai).
-2. Clicca su **New repository**.
-3. Come nome puoi scegliere `neonlab-futuro`.
-4. Se usi GitHub Free, imposta il repository su **Public** per GitHub Pages.
-5. Conferma con **Create repository**.
-
-Un repository è una cartella di progetto conservata su GitHub, con la cronologia delle modifiche.
-
-## 4. Carica i file del sito
-
-Nella pagina del repository:
-
-1. Seleziona **Add file → Upload files**.
-2. Trascina i **contenuti** della cartella `neonlab-lezione14`, non il file ZIP.
-3. Assicurati che `index.html` si trovi alla **radice del repository**, insieme a `style.css`, `script.js` e alla cartella `assets`.
-4. Puoi includere anche questo `LEGGIMI.md`, che non contiene messaggi privati.
-5. Conferma l'upload con **Commit changes**.
-
-Struttura che devi vedere su GitHub:
+Nel `<head>` sono presenti `rel="canonical"` e `og:url` con l'indirizzo previsto:
 
 ```text
-neonlab-futuro (repository)
-├── index.html
-├── style.css
-├── script.js
-├── LEGGIMI.md
-└── assets
-    ├── favicon-neon.svg
-    ├── neon-orbit.svg
-    ├── neon-city.svg
-    └── neon-circuit.svg
+https://lkhan79.github.io/neonlab-futuro/
 ```
 
-Se invece trovi `neonlab-lezione14/index.html` all'interno di una sottocartella, sposta i file alla radice del repository prima di pubblicare dalla cartella `/(root)`.
+Se cambi username, nome del repository o dominio, aggiorna anche questi collegamenti.
 
-## 5. Attiva GitHub Pages
+## 3. Prova il progetto prima di caricarlo
 
-1. Apri il repository su GitHub.
-2. Vai in **Settings → Pages**.
-3. In **Build and deployment**, seleziona **Source: Deploy from a branch**.
-4. Seleziona il branch **main** e la cartella **/(root)**.
-5. Premi **Save**.
-6. Attendi che GitHub completi la pubblicazione e apri il link mostrato in quella pagina.
+1. Estrai la cartella e apri `index.html` nel browser.
+2. Controlla che grafica, menu, tema rosa, energia, tecnologie e galleria funzionino.
+3. Scorri fino alla nuova sezione **Percorso**.
+4. Scendi di oltre 450 pixel: deve comparire in basso a destra la freccia **↑**.
+5. Cliccala: devi tornare all'inizio.
+6. Controlla nel footer che l'anno sia aggiornato.
+7. Testa il modulo Contatti solo se hai impostato un indirizzo di tua proprietà e un'app di posta.
 
-Se hai scelto `neonlab-futuro`, l'indirizzo avrà una struttura simile a:
+## 4. Aggiorna il sito su GitHub Pages
 
-```text
-https://TUO-USERNAME.github.io/neonlab-futuro/
-```
+Questi file sono una **nuova versione** del sito, non un secondo sito da creare.
 
-Sostituisci `TUO-USERNAME` con il tuo vero username GitHub. L'indirizzo preciso sarà indicato da GitHub Pages.
+1. Torna al repository **https://github.com/lkhan79/neonlab-futuro**.
+2. Conserva una copia dei file e delle personalizzazioni esistenti sul tuo computer.
+3. Carica i nuovi `index.html`, `style.css`, `script.js`, `README.md` e `LEGGIMI.md` nella radice del repository, aggiornando i file omonimi. La cartella `assets` può restare uguale.
+4. Conferma con **Commit changes**.
+5. In **Settings → Pages**, controlla che la pubblicazione usi ancora `main` e `/(root)`.
+6. Visita **https://lkhan79.github.io/neonlab-futuro/** quando la nuova versione sarà stata distribuita.
 
-## 6. Controlli dopo la pubblicazione
+GitHub Pages può richiedere qualche minuto per pubblicare una modifica. Se il sito appare vecchio, aggiorna la pagina con `CTRL + F5` dopo aver verificato che il deploy sia terminato.
 
-- [ ] Il sito si apre da un URL pubblico `https://...github.io/...`.
-- [ ] Sfondo e testi sono stilizzati: significa che `style.css` è stato caricato.
-- [ ] Le immagini della galleria si vedono: la cartella `assets` è corretta.
-- [ ] Il pulsante **Attiva tema rosa** funziona: `script.js` è stato caricato.
-- [ ] Il menu e le schede interattive funzionano anche da smartphone.
-- [ ] Il form non prova a inviare dati a `/api/contatti`.
-- [ ] Nessun `server.js`, `dati/messaggi.jsonl`, password o dato privato è stato caricato sul repository.
+**Non caricare `server.js`, la cartella `dati` o `messaggi.jsonl`.** Il backend Node.js delle lezioni precedenti è un progetto locale separato e non è incluso in questa versione pubblica.
 
-## 7. Se qualcosa non funziona
+## 5. Collaudo finale da portfolio
 
-**Pagina 404:** controlla che `index.html` sia alla radice e che GitHub Pages sia configurato su `main` e `/(root)`; attendi il completamento del deploy.
+- [ ] Il sito pubblico si apre in HTTPS.
+- [ ] L'icona neon appare nella scheda del browser.
+- [ ] La navigazione funziona su computer e smartphone.
+- [ ] Il cambio tema funziona.
+- [ ] Le tre schede tecnologiche aggiornano il dettaglio.
+- [ ] Le tre immagini aprono l'anteprima e si chiudono con Esc.
+- [ ] La sezione Percorso è leggibile.
+- [ ] Il pulsante ↑ compare dopo lo scroll e riporta all'inizio.
+- [ ] Nel footer compare l'anno corrente.
+- [ ] Il repository GitHub mostra `README.md`.
+- [ ] Il modulo Contatti è configurato consapevolmente; non promette un invio server che non esiste.
+- [ ] Non sono stati pubblicati dati privati.
 
-**CSS o immagini assenti:** controlla maiuscole, minuscole e i percorsi `style.css`, `script.js` e `assets/...`.
+## 6. Ultimo esercizio: personalizzazione autonoma
 
-**Modulo Contatti non pronto:** configura `EMAIL_DESTINATARIO` con un tuo indirizzo dedicato e carica nuovamente `script.js`; il browser del visitatore deve avere un'app di posta configurata.
+Modifica uno dei quattro passaggi della sezione Percorso, per esempio cambia il titolo **Design CSS neon** con una tua specializzazione. Pubblica la modifica e controlla il risultato da un altro dispositivo.
 
-**Vuoi salvare veramente le richieste sul server online?** GitHub Pages da solo non può farlo. Servirà un backend pubblicato su un hosting adatto o un servizio di moduli: non pubblicare così com'è il `server.js` didattico.
-
-## 8. Esercizio finale
-
-Modifica il testo principale di `index.html`, salva il file e carica la versione aggiornata nel repository. Osserva come GitHub Pages aggiorna il sito quando viene pubblicata la modifica.
-
-Documentazione ufficiale:
-
-- https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-- https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-- https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
-
-**Prossima lezione: 15, rifinitura e progetto finale.**
+Quando funziona, hai completato il percorso pratico. Il progetto può continuare: hosting di backend, database, componenti React, animazioni avanzate e progetti reali saranno i passi successivi.
